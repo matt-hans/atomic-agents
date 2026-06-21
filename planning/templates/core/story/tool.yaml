@@ -1,0 +1,16 @@
+componentType: tool
+skill: create-atomic-tool
+workItemType: Story
+titleTemplate: "Wrap {{tool_name}} as a BaseTool"
+storyPoints: 3
+includePortability: true
+tags:
+  - atomic
+  - "atomic:role:tool"
+expectedPaths:
+  - "agents/{{agent_slug}}/tools/{{tool_slug}}.py"
+acceptanceCriteria:
+  - id: ac-tool-generics
+    text: "Subclasses BaseTool[In, Out] with explicit generics; run() returns the output schema instance, never a dict."
+  - id: ac-tool-failure
+    text: "Routine failures (not-found, rate-limited, timeout) return typed outputs; external I/O has a timeout; secrets from env."

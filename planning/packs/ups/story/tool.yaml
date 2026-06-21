@@ -1,0 +1,17 @@
+componentType: tool
+skill: create-atomic-tool
+workItemType: Story
+titleTemplate: "Wrap ups-mcp {{ups_mcp_tool}} as a BaseTool"
+storyPoints: 5
+includePortability: true
+tags:
+  - atomic
+  - "atomic:role:tool"
+  - "pack:ups"
+expectedPaths:
+  - "agents/{{agent_slug}}/tools/{{tool_slug}}.py"
+acceptanceCriteria:
+  - id: ac-tool-generics
+    text: "Subclasses BaseTool[In, Out]; run() returns the output schema instance; routine failures are typed."
+  - id: ac-tool-mcp-bridge
+    text: "Reaches UPS only via fetch_mcp_tools against the ups-mcp server; no UPS SDK in core/; OAuth creds (CLIENT_ID/CLIENT_SECRET/ENVIRONMENT) live in the MCP server env, never the agent."

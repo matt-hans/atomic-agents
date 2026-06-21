@@ -1,0 +1,14 @@
+componentType: hooks
+skill: add-hooks
+workItemType: Story
+titleTemplate: "Add hooks and observability to {{agent_name}}"
+storyPoints: 2
+includePortability: true
+tags:
+  - atomic
+  - "atomic:role:hooks"
+expectedPaths:
+  - "agents/{{agent_slug}}/agent.py"
+acceptanceCriteria:
+  - id: ac-hooks-errors
+    text: "Errors handled via register_hook (parse:error / completion:error / completion:last_attempt); handlers log or meter and never raise."

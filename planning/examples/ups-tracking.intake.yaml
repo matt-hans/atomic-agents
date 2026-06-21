@@ -1,0 +1,13 @@
+application: "UPS Logistics Assistant"
+pack: ups
+agent:
+  name: "Package Tracking Assistant"
+  capability: "turn a UPS tracking number into a plain-language delivery status"
+provider: openai
+tools:
+  - name: "Track Package"
+    ups_mcp_tool: "track_package"
+contextProviders:
+  - name: "Locale"
+memory: false
+hooks: false

@@ -1,0 +1,7 @@
+id: dod
+definitionOfDone:
+  - "core/ passes the no-secrets / no-SDK static check."
+  - "Provider-swap (mocked) green for all required providers."
+  - "Packaging smoke (cli, library) returns identical OutputSchema shape."
+  - "Config fail-fast proven via pytest.raises(ConfigError)."
+  - "Portability checklist on the Feature fully checked; PR + CI build linked to the Feature."

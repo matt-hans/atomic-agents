@@ -1,0 +1,12 @@
+id: portability
+acceptanceCriteria:
+  - id: ac-port-1
+    text: "Provider independence: no provider SDK imported outside config/provider.py; a mocked Instructor client per provider constructs the right client + Mode and parses a valid OutputSchema."
+  - id: ac-port-2
+    text: "12-factor config: all secrets, URLs, model ids and mode come from env; a missing required var raises a named ConfigError at Settings() construction."
+  - id: ac-port-3
+    text: "Packaging independence: OutputSchema.model_json_schema() is identical across required runtimes (cli, library) and matches a recorded golden fixture with the LLM mocked."
+  - id: ac-port-4
+    text: "External integration via an injected edge adapter (MCP by default); core imports no vendor SDK. Applies only if the agent has an external integration."
+  - id: ac-port-5
+    text: "Offline-capable: asserted per-PR by the static no-provider-SDK-in-core check; proven by an optional nightly Ollama job, not a PR gate."

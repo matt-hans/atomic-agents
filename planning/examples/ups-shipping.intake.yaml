@@ -1,0 +1,12 @@
+application: "UPS Logistics Assistant"
+pack: ups-shipping
+agent:
+  name: "Shipping Rate Quoter"
+  capability: "quote UPS shipping rates and service options for a package"
+provider: anthropic
+tools:
+  - name: "Rate Shop"
+    ups_api: "Rating"
+contextProviders: []
+memory: false
+hooks: false

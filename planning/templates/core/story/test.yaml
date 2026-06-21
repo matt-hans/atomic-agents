@@ -1,0 +1,17 @@
+componentType: test
+skill: test
+workItemType: Story
+titleTemplate: "Verify run-anywhere DoD for {{agent_name}}"
+storyPoints: 3
+includePortability: true
+tags:
+  - atomic
+  - "atomic:role:test"
+expectedPaths:
+  - "agents/{{agent_slug}}/tests/test_portability.py"
+  - "agents/{{agent_slug}}/tests/golden/"
+acceptanceCriteria:
+  - id: ac-test-hermetic
+    text: "Provider-swap (mocked client), packaging shape (model_json_schema equality) and config fail-fast (pytest.raises) all run hermetically with no network."
+  - id: ac-test-golden
+    text: "A recorded golden fixture validates each required runtime with the LLM mocked."

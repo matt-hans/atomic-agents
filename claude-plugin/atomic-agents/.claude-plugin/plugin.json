@@ -1,7 +1,7 @@
 {
   "name": "atomic-agents",
-  "version": "2.1.0",
-  "description": "Skills plus explorer and reviewer subagents for building, scaffolding, understanding, and auditing applications with the Atomic Agents Python framework. Includes the umbrella `framework` skill, action-oriented `create-atomic-schema` / `create-atomic-agent` / `create-atomic-tool` / `create-atomic-context-provider` skills, the `new-app` scaffolder, progressive-disclosure reference material for prompts, orchestration, memory, hooks, providers, project structure, and testing, and isolated-context subagents for codebase mapping and code review.",
+  "version": "2.2.0",
+  "description": "Skills plus explorer and reviewer subagents for building, scaffolding, understanding, and auditing applications with the Atomic Agents Python framework. Includes the umbrella `framework` skill, action-oriented `create-atomic-schema` / `create-atomic-agent` / `create-atomic-tool` / `create-atomic-context-provider` skills, the `new-app` scaffolder, the `configure-provider` / `add-memory` / `add-hooks` / `orchestrate` / `test` workflow skills, progressive-disclosure reference material for prompts, orchestration, memory, hooks, providers, project structure, and testing, and isolated-context subagents for codebase mapping and code review. A GitHub Copilot build of every skill is generated under `copilot/` by `tools/compile_copilot.mjs`.",
   "author": {
     "name": "Kenny Vaneetvelde",
     "email": "kenny@eigenwise.io"

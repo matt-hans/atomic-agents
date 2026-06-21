@@ -1,0 +1,14 @@
+componentType: memory
+skill: add-memory
+workItemType: Story
+titleTemplate: "Add conversation memory to {{agent_name}}"
+storyPoints: 2
+includePortability: true
+tags:
+  - atomic
+  - "atomic:role:memory"
+expectedPaths:
+  - "agents/{{agent_slug}}/agent.py"
+acceptanceCriteria:
+  - id: ac-mem-history
+    text: "ChatHistory wired into AgentConfig; bounded (max_messages) for long-running use; load() called as an instance method that mutates self."
