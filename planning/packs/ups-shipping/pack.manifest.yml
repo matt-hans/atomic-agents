@@ -1,0 +1,10 @@
+id: ups-shipping
+name: "UPS Shipping & Rating (direct API)"
+coreCompat: ">=0.1.0"
+description: "Second UPS pack. Integrates the UPS REST API directly (Rating, Shipping, Address Validation) via an OAuth edge-adapter tool, because the ups-mcp server only covers tracking and address validation. Demonstrates a direct-API integration style alongside the MCP-bridge style of the 'ups' pack."
+variables:
+  ups_environment: "test"
+overrides:
+  - tool
+tags:
+  - "pack:ups-shipping"

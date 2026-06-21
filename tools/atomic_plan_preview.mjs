@@ -30,6 +30,8 @@ function parseYaml(text) {
   const scalar = (s) => {
     s = s.trim();
     if ((s.startsWith('"') && s.endsWith('"')) || (s.startsWith("'") && s.endsWith("'"))) return s.slice(1, -1);
+    if (s === "[]") return [];
+    if (s === "{}") return {};
     if (s === "true") return true;
     if (s === "false") return false;
     if (s === "null" || s === "~" || s === "") return null;
@@ -118,15 +120,15 @@ const baseVars = {
 };
 
 // ---------- build story selection (rules live here, not in templates) ----------
-const tools = intake.tools || [];
-const cps = intake.contextProviders || [];
+const tools = Array.isArray(intake.tools) ? intake.tools : [];
+const cps = Array.isArray(intake.contextProviders) ? intake.contextProviders : [];
 const selection = [];
 const add = (type, vars = {}, overridden = false) => selection.push({ type, vars: { ...baseVars, ...vars }, overridden });
 
 add("schema");
 add("agent");
 add("provider-config");
-for (const t of tools) add("tool", { tool_name: t.name, tool_slug: snake(t.name), ups_mcp_tool: t.ups_mcp_tool || t.name });
+for (const t of tools) add("tool", { ...t, tool_name: t.name, tool_slug: snake(t.name), ups_mcp_tool: t.ups_mcp_tool || t.name });
 for (const c of cps) add("context-provider", { cp_name: c.name, cp_slug: snake(c.name) });
 if (intake.memory) add("memory");
 if (intake.hooks) add("hooks");

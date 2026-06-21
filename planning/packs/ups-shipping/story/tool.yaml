@@ -1,0 +1,19 @@
+componentType: tool
+skill: create-atomic-tool
+workItemType: Story
+titleTemplate: "Wrap the UPS {{ups_api}} API as a BaseTool"
+storyPoints: 5
+includePortability: true
+tags:
+  - atomic
+  - "atomic:role:tool"
+  - "pack:ups-shipping"
+expectedPaths:
+  - "agents/{{agent_slug}}/tools/{{tool_slug}}.py"
+acceptanceCriteria:
+  - id: ac-tool-generics
+    text: "Subclasses BaseTool[In, Out]; run() returns the output schema instance; routine failures (rejected rate, invalid address) are typed outputs, not exceptions."
+  - id: ac-tool-ups-rest
+    text: "Calls the UPS REST API directly via an injected edge adapter (requests + OAuth client-credentials from env CLIENT_ID/CLIENT_SECRET/ENVIRONMENT); no UPS SDK in core/; 10s timeout; non-2xx maps to a typed failure."
+  - id: ac-tool-why-direct
+    text: "Uses the direct API rather than ups-mcp because the MCP server covers only tracking and address validation; keep the HTTP/auth confined to the tool (edge), never core."
