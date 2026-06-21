@@ -38,6 +38,8 @@ const NAME_MAP = {
   "add-hooks": "atomic-add-hooks",
   "orchestrate": "atomic-orchestrate",
   "test": "atomic-test",
+  "plan": "atomic-plan",
+  "sync": "atomic-sync",
   // subagents
   "atomic-explorer": "atomic-explore",
   "atomic-reviewer": "atomic-review",

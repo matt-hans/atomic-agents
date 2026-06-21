@@ -26,6 +26,8 @@ skills, now as Copilot **slash commands** you run in Copilot Chat.
 | `/atomic-test` | Scaffold pytest coverage (mocked providers) |
 | `/atomic-explore` | Map an existing atomic-agents codebase |
 | `/atomic-review` | Audit code for framework-specific defects |
+| `/atomic-plan` | Generate an ADO Epic→Feature→Stories backlog for an agent |
+| `/atomic-sync` | Link branches/PRs back to their ADO work items |
 | `/atomic-framework` | Ask anything about the framework |
 
 Plus:

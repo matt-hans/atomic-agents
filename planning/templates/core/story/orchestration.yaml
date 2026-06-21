@@ -1,0 +1,15 @@
+componentType: orchestration
+skill: orchestrate
+workItemType: Story
+titleTemplate: "Orchestrate agents in {{application}}"
+storyPoints: 5
+includePortability: false
+tags:
+  - atomic
+  - "atomic:role:orchestration"
+  - "atomic:level:epic"
+acceptanceCriteria:
+  - id: ac-orch-contract
+    text: "One Feature's output schema feeds the next Feature's input schema; topology (sequential/router/parallel) is explicit."
+  - id: ac-orch-links
+    text: "Predecessor/Successor links set between agent-Features; parallel agents do not share a ChatHistory."

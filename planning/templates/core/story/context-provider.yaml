@@ -1,0 +1,16 @@
+componentType: context-provider
+skill: create-atomic-context-provider
+workItemType: Story
+titleTemplate: "Add the {{cp_name}} context provider"
+storyPoints: 2
+includePortability: true
+tags:
+  - atomic
+  - "atomic:role:context-provider"
+expectedPaths:
+  - "agents/{{agent_slug}}/context/{{cp_slug}}.py"
+acceptanceCriteria:
+  - id: ac-cp-info
+    text: "Subclasses BaseDynamicContextProvider; get_info() returns a string, does no blocking I/O, leaks no secrets."
+  - id: ac-cp-register
+    text: "Registered on the agent before any run() that depends on it; slow sources cached with a TTL."

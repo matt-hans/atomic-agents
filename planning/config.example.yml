@@ -1,0 +1,16 @@
+# .atomic/config.yml - per-repo binding (committed once). Holds env NAMES only, never secrets.
+ado:
+  organization: "your-org"
+  project: "your-project"
+  process: auto
+  areaPath: ""
+  iterationPath: ""
+fieldRefs:
+  storyPoints: auto
+  acceptanceCriteria: auto
+acTarget: description-section
+packs:
+  enabled: []
+defaults:
+  tags:
+    - atomic

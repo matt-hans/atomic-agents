@@ -1,0 +1,16 @@
+componentType: schema
+skill: create-atomic-schema
+workItemType: Story
+titleTemplate: "Define I/O schemas for {{agent_name}}"
+storyPoints: 1
+includePortability: true
+tags:
+  - atomic
+  - "atomic:role:schema"
+expectedPaths:
+  - "agents/{{agent_slug}}/schemas.py"
+acceptanceCriteria:
+  - id: ac-schema-base
+    text: "Input and output subclass BaseIOSchema (not pydantic.BaseModel), each with a non-empty docstring."
+  - id: ac-schema-fields
+    text: "Every field has Field(..., description=...); closed sets use Literal; numeric bounds via ge/le where meaningful."

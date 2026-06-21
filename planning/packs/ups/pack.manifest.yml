@@ -1,0 +1,10 @@
+id: ups
+name: "UPS Logistics"
+coreCompat: ">=0.1.0"
+description: "First domain pack: UPS shipping/logistics agents reached via the ups-mcp MCP server. Content only; the core stays domain-agnostic."
+variables:
+  ups_environment: "test"
+overrides:
+  - tool
+tags:
+  - "pack:ups"

@@ -1,0 +1,17 @@
+componentType: agent
+skill: create-atomic-agent
+workItemType: Story
+titleTemplate: "Build the {{agent_name}} agent core"
+storyPoints: 2
+includePortability: true
+tags:
+  - atomic
+  - "atomic:role:agent"
+expectedPaths:
+  - "agents/{{agent_slug}}/agent.py"
+  - "agents/{{agent_slug}}/runtimes/"
+acceptanceCriteria:
+  - id: ac-agent-generics
+    text: "Constructed as AtomicAgent[In, Out] with explicit generics; SystemPromptGenerator has background/steps/output_instructions."
+  - id: ac-agent-edge
+    text: "Core/Edge split: core/ holds pure logic; runtimes/ holds thin cli + library adapters returning the same OutputSchema."

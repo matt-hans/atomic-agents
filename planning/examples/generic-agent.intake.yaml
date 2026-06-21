@@ -1,0 +1,13 @@
+application: "Internal Knowledge Assistant"
+pack: core
+agent:
+  name: "Doc QA Agent"
+  capability: "answer questions over internal engineering docs"
+provider: openai
+tools:
+  - name: "Doc Search"
+  - name: "Confluence Fetch"
+contextProviders:
+  - name: "User Identity"
+memory: true
+hooks: false

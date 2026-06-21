@@ -1,0 +1,12 @@
+componentType: epic
+workItemType: Epic
+titleTemplate: "{{application}}"
+storyPoints: 0
+tags:
+  - atomic
+  - "atomic:level:epic"
+acceptanceCriteria:
+  - id: ac-epic-scope
+    text: "Names a business application or initiative, never an individual agent. Agents are Features beneath this Epic."
+  - id: ac-epic-orchestration
+    text: "If two or more agent-Features exist, an Epic-level Orchestration story owns the inter-agent contract and topology."

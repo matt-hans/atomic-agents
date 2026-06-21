@@ -1,0 +1,14 @@
+componentType: review
+skill: review
+workItemType: Story
+titleTemplate: "Framework review gate for {{agent_name}}"
+storyPoints: 2
+includePortability: false
+tags:
+  - atomic
+  - "atomic:role:review"
+acceptanceCriteria:
+  - id: ac-review-lint
+    text: "Portability lint passes: no provider SDK outside config/provider.py; no forbidden literal in core/ or runtimes/; Instructor mode matches the factory."
+  - id: ac-review-gate
+    text: "Closes last; a blocking finding moves the related Story back to an in-progress state."

@@ -1,0 +1,17 @@
+componentType: provider-config
+skill: configure-provider
+workItemType: Story
+titleTemplate: "Configure provider wiring for {{agent_name}}"
+storyPoints: 1
+includePortability: true
+tags:
+  - atomic
+  - "atomic:role:provider-config"
+expectedPaths:
+  - "agents/{{agent_slug}}/config/provider.py"
+  - "agents/{{agent_slug}}/config/settings.py"
+acceptanceCriteria:
+  - id: ac-prov-single
+    text: "config/provider.py is the ONLY module importing provider SDKs and instructor; selection is match settings.PROVIDER with Mode matching the factory."
+  - id: ac-prov-env
+    text: "settings.py loads all model ids, modes and secrets from env via pydantic-settings; no literals in core/."

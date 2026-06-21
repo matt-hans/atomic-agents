@@ -1,0 +1,13 @@
+componentType: feature
+workItemType: Feature
+titleTemplate: "{{agent_name}} (agent)"
+storyPoints: 0
+includePortability: true
+tags:
+  - atomic
+  - "atomic:level:feature"
+acceptanceCriteria:
+  - id: ac-feat-single
+    text: "Implements exactly one AtomicAgent[In, Out]; multi-agent coordination lives at the Epic, not here."
+  - id: ac-feat-dod
+    text: "Meets the standardized run-anywhere Definition of Done before it can close."
